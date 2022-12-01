@@ -1,0 +1,22 @@
+html {
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+	background-color: #fafafa
+}
+
+html, body {
+	margin:0
+}
+
+main {
+	margin: 0px 16px;
+}
+
+textarea {
+	min-width: 400px;
+	min-height: 200px;
+    resize: none;
+}
+
+.row {
+    margin-bottom: 12px;
+}

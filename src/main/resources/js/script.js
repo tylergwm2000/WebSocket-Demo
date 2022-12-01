@@ -22,6 +22,16 @@ function handle_error(error) {
 	alert(error.toString());
 }
 
+function read_value(id, name, mandatory) {
+    const data = new FormData();
+	var value = elem(id).value;
+
+	if (value.length == 0 && mandatory) throw new Error("Parameter " + name + " is mandatory.");
+	
+	data.append(name, value)
+    return data;
+}
+
 function post(url, data) {
 	return fetch(url, { method: 'post', body: data });
 }

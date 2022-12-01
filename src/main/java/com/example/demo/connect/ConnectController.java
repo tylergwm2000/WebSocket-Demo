@@ -23,13 +23,8 @@ public class ConnectController extends Controller{
     }
 	
 	@PostMapping("/demo/connect")
-    public void connect(@RequestPart("config") MultipartFile f_config, @RequestParam(value = "iterations", required = false) Long n_iterations,
-    					@RequestParam(value = "duration", required = false) Double n_duration) 
-    								   			   throws Exception {    	
-
-    	ZipFile zf = this.sService.SimulateZip(f_config, n_iterations, n_duration);
-		
-    	return FilesResponse.build("simulation_results.zip", zf.toByteArray());
+    public void connect(@RequestParam(value = "uuid", required = true) String uuid) throws Exception {    	
+		System.out.println(uuid + " REST API connected!");
     }
 
 }
