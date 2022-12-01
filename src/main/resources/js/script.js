@@ -18,6 +18,12 @@ socket.onerror = function(error){
     alert('[error]');
 };
 
+function get_blob(response) {
+	if (response.ok) return response.blob();
+	
+	else return get_error(response);
+}
+
 function handle_error(error) {
 	alert(error.toString());
 }
